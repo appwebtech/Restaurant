@@ -119,3 +119,34 @@
 .center {
 	text-align: center;
 }
+
+.jumbotron h1  {
+	color: #ffffff;
+	text-align: center;
+	margin-bottom: 100px;
+	margin-top: 90px;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+
+.jumbotron h2 {
+	color: #ffffff;
+	text-align: center;
+	margin-bottom: 100px;
+	margin-top: 90px;
+	letter-spacing: -1px;
+
+}
+
+.btn-xlarge {
+	background-color: #1E914B;
+}
+
+.btn-xlarge:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+footer {
+	text-align: center;
+}
