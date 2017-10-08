@@ -1,5 +1,6 @@
 <%= render 'shared/page_title', title: @recipe.name  %>
 
+<div class ="row">
 <div class="well col-md-8 col-md-offset-2">
 	<h4 class="center description"><strong>Descrizione: </strong></h4>
 	<hr />
@@ -12,4 +13,4 @@
 		<div class="pull-right"><%= time_ago_in_words(@recipe.created_at) %> ago</div>
 	</div>
 </div>
-
+</div>

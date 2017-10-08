@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
 	end
 
 	def new
-		@recipe = Recipe.new(params[:id])
+		@recipe = Recipe.new
 	end
 
 end

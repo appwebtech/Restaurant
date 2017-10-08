@@ -4,7 +4,7 @@
 #logo {
 	float: left;
 	font-size: 1.7em;
-	color: #fff;
+	color: #1E914B;
 	text-transform: uppercase;
 	letter-spacing: -1px;
 	font-weight: bold;
@@ -15,96 +15,6 @@
 	text-decoration: none;
 }
 
-/* navbar */
-.navbar-default {
-  background-color: #139248;
-  border-color: #cd2939;
-}
-.navbar-default .navbar-brand {
-  color: #ffffff;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-  color: #b3d0bc;
-}
-.navbar-default .navbar-text {
-  color: #ffffff;
-}
-.navbar-default .navbar-nav > li > a {
-  color: #ffffff;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #b3d0bc;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu {
-  background-color: #139248;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
-  color: #ffffff;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-  color: #b3d0bc;
-  background-color: #cd2939;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
-  background-color: #cd2939;
-}
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-  color: #b3d0bc;
-  background-color: #cd2939;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #b3d0bc;
-  background-color: #cd2939;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-  color: #b3d0bc;
-  background-color: #cd2939;
-}
-.navbar-default .navbar-toggle {
-  border-color: #cd2939;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: #cd2939;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffffff;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #ffffff;
-}
-.navbar-default .navbar-link {
-  color: #ffffff;
-}
-.navbar-default .navbar-link:hover {
-  color: #b3d0bc;
-}
-
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ffffff;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #b3d0bc;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #b3d0bc;
-    background-color: #cd2939;
-  }
-}
 
 /* jumbotron  */
 
@@ -121,7 +31,7 @@
 }
 
 .jumbotron h1  {
-	color: #ffffff;
+	color: ghostwhite !important;
 	text-align: center;
 	margin-bottom: 100px;
 	margin-top: 90px;
@@ -154,147 +64,13 @@
 }
 
 
-/* Footer */
 
-#myFooter {
-    background-color: #1E914B;
-    color: white;
-    padding-top: 20px;
-}
-
-#map-container {
-    height: 240px;
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-#myFooter .row {
-    margin: 0 85px;
-}
-
-#myFooter .footer-copyright {
-    background-color: #CA2C3E;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    text-align: center;
-}
-
-#myFooter .footer-copyright p {
-    margin: 10px;
-    color: #ccc;
-}
-
-#myFooter .container {
-    width: auto;
-}
-
-#myFooter ul {
-    list-style-type: none;
-    padding-left: 0;
-    line-height: 1.7;
-}
-
-#myFooter h5 {
-    font-size: 18px;
-    color: white;
-    font-weight: bold;
-    margin-top: 30px;
-}
-
-#myFooter a {
-    color: #d2d1d1;
-    text-decoration: none;
-}
-
-#myFooter a:hover,
-#myFooter a:focus {
-    text-decoration: none;
-    color: white;
-}
-
-#myFooter .social-networks {
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: 38px;
-}
-
-#myFooter .fa {
-    font-size: 30px;
-    margin-right: 15px;
-    margin-left: 20px;
-    background-color: white;
-    color: #182c39;
-    border-radius: 51%;
-    padding: 10px;
-    height: 50px;
-    width: 50px;
-    text-align: center;
-    line-height: 31px;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-#myFooter .fa-facebook:hover {
-    color: #2b55ff;
-}
-
-#myFooter .fa-facebook:focus {
-    color: #2b55ff;
-}
-
-#myFooter .fa-github:hover {
-    color: #24292E;
-}
-
-#myFooter .fa-github:focus {
-    color: #24292E;
-}
-
-#myFooter .fa-twitter:hover {
-    color: #00aced;
-}
-
-#myFooter .fa-twitter:focus {
-    color: #00aced;
-}
-
-@media screen and (max-width: 767px) {
-    #myFooter {
-        text-align: center;
-    }
-    #myFooter .row {
-        margin: 0;
-    }
+.sembo {
+  margin-top: 10px;
 }
 
 
-
-/* CSS used for positioning the footers at the bottom of the page. */
-/* You can remove this. */
-
-html{
-    height: 100%;
-}
-
-body{
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: column;
-    -webkit-flex-direction: column;
-    height: 100%;
-}
-
-.content{
-   flex: 1 0 auto;
-   -webkit-flex: 1 0 auto;
-   min-height: 200px;
-}
-
-#myFooter{
-   flex: 0 0 auto;
-   -webkit-flex: 0 0 auto;
-}
+/* navbar */
 
 
 /* Links */
@@ -303,13 +79,14 @@ body{
 
 }
 
+.rangi-kijani a {
+  color: #1E914B;
+
+}
+
 .well a:hover {
   color: #1E914B;
   
-}
-
-.sembo {
-  margin-top: 10px;
 }
 
 
