@@ -1,4 +1,13 @@
 <%= render 'shared/page_title', title: "Creare una nuova ricetta" %>
+<% if @recipe.errors.any? %>
+	<%= pluralize(@recipe.errors.count, "error") %>
+	non è stata possibile per <%= @recipe.class %> di essere salvata:
+	<ul>
+		<% @recipe.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
 
 <div class ="row">
 	<div class="col-md-12">
