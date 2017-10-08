@@ -30,4 +30,13 @@ class RecipesTest < ActionDispatch::IntegrationTest
 
 	end
 
+	test "create new valid recipe" do 
+		get new_recipe_path
+	end
+
+	test "reject invalid recipe submissions" do 
+		get new_recipe_path
+	end
+
+
 end
