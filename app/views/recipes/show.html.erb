@@ -9,8 +9,13 @@
 	<div class="pull-right">
 		<p class="center"><em>Preparato da: </em></p>		
 		<p class="center"> <%= link_to gravatar_for(@recipe.chef), recipes_path%> </p>
-		<p class="center"><small><%= @recipe.chef.chefname.capitalize %></small></p>
-		<div class="pull-right"><%= time_ago_in_words(@recipe.created_at) %> ago</div>
+		<p class="center"><small><%= @recipe.chef.chefname.capitalize %></small>
+		<div class="pull-right"><%= time_ago_in_words(@recipe.created_at) %> ago</div></p>
+	</div>
+	<div class="recipe-actions">
+		<%= link_to "Modifica questa ricetta", edit_recipe_path(@recipe), class: "btn btn-xs btn-warning" %>
+		<%= link_to "Cancella questa ricetta", recipe_path(@recipe), method: :delete, 
+																					 data: { confirm: "Sei sicuro/a di voler cancellare?" }, class: "btn btn-xs btn-danger" %>
 	</div>
 </div>
 </div>
