@@ -3,7 +3,8 @@ require 'test_helper'
 class RecipesTest < ActionDispatch::IntegrationTest
 
 	def setup
-		@chef = Chef.create!(chefname: "josembi", email: "josembi@gmail.com")   #Bang ensures that it hits the DB
+		@chef = Chef.create!(chefname: "josembi", email: "josembi@gmail.com",   #Bang ensures that it hits the DB
+												password: "password", password_confirmation: "password")
 		@recipe = Recipe.create(name: "pizza kebab", description: "pizza dough rolled, kebab, veggies on top and cheese of your liking", chef: @chef)
 		@recipe2 = @chef.recipes.build(name: "chapati madondo", description: "Tayarisha mapocha na uandae na madondo.")
 		@recipe2.save
@@ -26,7 +27,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
 		assert_template 'recipes/show'
 		assert_match @recipe.name, response.body
 		assert_match @recipe.description, response.body
-		assert_match @chef.chefname, repsonse.body
+		assert_match @chef.chefname, response.body
 		assert_select 'a[href=?]', edit_recipe_path(@recipe), text: "Edit this recipe"
 		assert_select 'a[href=?]', recipe_path(@recipe), text: "Delete this recipe"
 		assert_select 'a[href=?]', recipes_path, text: "Torna nella lista delle ricette"
@@ -38,7 +39,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
 		name_of_recipe = "githeri without the man"
 		description_of_recipe = "Buy githeri, have it put in a polythene bag then snack it on queue whilst waiting to vote"
 		assert_difference 'Recipe.count', 1 do 
-			post recipe_path, params: { recipe: { name: name_of_recipe, description: description_of_recipe}}
+			post recipes_path, params: { recipe: { name: name_of_recipe, description: description_of_recipe}}
 		end
 		follow_redirect!
 		assert_match name_of_recipe.capitalize, response.body 

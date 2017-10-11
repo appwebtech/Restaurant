@@ -2,7 +2,8 @@ require 'test_helper'
 
 class RecipesEditTest < ActionDispatch::IntegrationTest
 	def setup
-		@chef = Chef.create!(chefname: "josembi", email: "josembi@gmail.com")   #Bang ensures that it hits the DB
+		@chef = Chef.create!(chefname: "josembi", email: "josembi@gmail.com",   #Bang ensures that it hits the DB
+													password: "password", password_confirmation: "password")
 		@recipe = Recipe.create(name: "Pasta Babbo Natale", description: "Preparare la pasta il 24 dicembre circa le 23:00, lasciare in forno ad una temperatura moderata, aspettare babbo in cammino e macinare il suo braccio per ragù", chef: @chef)
 	end
 
