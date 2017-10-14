@@ -18,6 +18,20 @@ class ChefsController < ApplicationController
 		@chef = Chef.find(params[:id])
 	end
 
+	def edit
+		@chef = Chef.find(params[:id])
+	end
+
+	def update
+		@chef = Chef.find(params[:id])
+		if @chef.update(kiboko_yao)
+			flash[:success] = "Il tuo profilo è stata aggiornato con successo"
+			redirect_to @chef
+		else
+			render 'edit'
+		end
+		
+	end
 
 
 

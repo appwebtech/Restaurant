@@ -1,0 +1,60 @@
+<%= render 'shared/errors', obj: @chef %>
+
+<div class ="row">
+	<div class="col-md-12">
+		<%= form_for(@chef, :html => {class: "form-horizontal", role: "form"}) do |josembi| %>
+			<div class="form-group">
+				<div class="control-label col-md-2">
+					<%= josembi.label :chefname, "Nome"%>
+					
+				</div>
+					<div class="col-md-8">
+						<%= josembi.text_field :chefname, class: "form-control", placeholder: "Inserire il tuo nome", autofocus: true %>
+					</div>
+			</div>
+			<div class="form-group">
+				<div class="control-label col-md-2">
+					<%= josembi.label :password %>
+					
+				</div>
+					<div class="col-md-8">
+						<%= josembi.password_field :password, class: "form-control", placeholder: "Inserire Password" %>
+					</div>
+			</div>
+	
+
+						<div class="form-group">
+				<div class="control-label col-md-2">
+					<%= josembi.label :password_confirmation, "Conferma password" %>
+					
+				</div>
+					<div class="col-md-8">
+						<%= josembi.password_field :password_confirmation, class: "form-control", placeholder: "Inserire di nuovo password" %>
+					</div>
+			</div>
+
+
+						<div class="form-group">
+				<div class="control-label col-md-2">
+					<%= josembi.label :email %>
+					
+				</div>
+					<div class="col-md-8">
+						<%= josembi.email_field :email, class: "form-control", placeholder: "Inserire Email" %>
+					</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-offset-2 col-md-10">
+					<%= josembi.submit(@chef.new_record? ? "Creare Account" : "Modifica Account", class: "btn btn-primary btn-lg btn-xlarge") %>
+				</div>
+				
+			</div>
+		<% end %>	
+
+		<div class="col-md-4 col-md-offset-4 rangi-kijani">
+			[ <%= link_to "Abandona e ritorna nella lista delle ricette", recipes_path %> ]
+		</div>
+	</div>
+	
+</div>
