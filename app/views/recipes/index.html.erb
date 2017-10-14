@@ -1,4 +1,11 @@
 <%= render 'shared/page_title', title: "Tutte le nostre ricette" %>
 
+<div align="center">
+	<%= will_paginate %>
+</div>
 
 <%= render 'recipe', ukambani: @recipes %>
+
+<div align="center">
+	<%= will_paginate %>
+</div>

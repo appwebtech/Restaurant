@@ -3,7 +3,7 @@
 <!--Iterate through all the chefs created and saved in DB via the @chef instance variable -->
 
 <div align="center">
-
+	<%= will_paginate %>
   <% @chefs.each do |chef| %>
     <ul class="listing">
       <div class="row">
@@ -16,5 +16,6 @@
 		</ul>
 
 	<% end %>
+	<%= will_paginate %>
 	
 </div>
