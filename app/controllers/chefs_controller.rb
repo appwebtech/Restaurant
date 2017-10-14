@@ -38,6 +38,12 @@ class ChefsController < ApplicationController
 		
 	end
 
+	def destroy
+		@chef = Chef.find(params[:id])
+		@chef.destroy 
+		flash[:danger] = "Il profilo con le ricette associato è stata eliminato"
+		redirect_to chefs_path
+	end
 
 
 	private
