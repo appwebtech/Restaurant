@@ -13,7 +13,7 @@
 		<div class="pull-right"><%= time_ago_in_words(@recipe.created_at) %> ago</div></p>
 	</div>
 	<div class="recipe-actions">
-		<% if logged_in? %>
+		<% if logged_in? && current_chef == @recipe.chef %>
 			<%= link_to "Modifica questa ricetta", edit_recipe_path(@recipe), class: "btn btn-xs btn-warning" %>
 			<%= link_to "Cancella questa ricetta", recipe_path(@recipe), method: :delete, 
 																						 data: { confirm: "Sei sicuro/a di voler cancellare?" }, class: "btn btn-xs btn-danger" %>

@@ -1,5 +1,5 @@
 class ChefsController < ApplicationController 
-	before_action :mambo_yote, only: [:show, :edit, :update, :delete]  # Extracting redundancy (refactor code)
+	before_action :mambo_yote, only: [:show, :edit, :update, :destroy]  # Extracting redundancy (refactor code)
 
 	def index
 		@chefs = Chef.paginate(page: params[:page], per_page: 5 )
