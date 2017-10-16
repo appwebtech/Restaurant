@@ -1,5 +1,6 @@
 class ChefsController < ApplicationController 
 	before_action :mambo_yote, only: [:show, :edit, :update, :destroy]  # Extracting redundancy (refactor code)
+	before_action :require_same_user, only: [:edit, :update, :destroy]
 
 	def index
 		@chefs = Chef.paginate(page: params[:page], per_page: 5 )
@@ -53,6 +54,13 @@ class ChefsController < ApplicationController
 
 	def mambo_yote
 		@chef = Chef.find(params[:id])
+	end
+
+	def require_same_user
+		if current_chef != @chef 
+			flash[:danger] = "Puoi solo modificare od eliminare il proprio account"
+			redirect_to chefs_path
+		end
 	end
 
 
