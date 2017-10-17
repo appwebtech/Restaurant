@@ -44,6 +44,7 @@ class ChefsController < ApplicationController
 			@chef.destroy 
 			flash[:danger] = "Il profilo con le ricette associato è stata eliminato"
 			redirect_to chefs_path
+		end
 	end
 
 
@@ -71,6 +72,5 @@ class ChefsController < ApplicationController
 			redirect_to root_path
 		end
 	end
-
 
 end
