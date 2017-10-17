@@ -1,6 +1,7 @@
 class ChefsController < ApplicationController 
 	before_action :mambo_yote, only: [:show, :edit, :update, :destroy]  # Extracting redundancy (refactor code)
 	before_action :require_same_user, only: [:edit, :update, :destroy]
+	before_action :require_admin, only: [:destroy]
 
 	def index
 		@chefs = Chef.paginate(page: params[:page], per_page: 5 )
@@ -39,9 +40,10 @@ class ChefsController < ApplicationController
 	end
 
 	def destroy
-		@chef.destroy 
-		flash[:danger] = "Il profilo con le ricette associato è stata eliminato"
-		redirect_to chefs_path
+		if !@chef.admin?
+			@chef.destroy 
+			flash[:danger] = "Il profilo con le ricette associato è stata eliminato"
+			redirect_to chefs_path
 	end
 
 
@@ -57,9 +59,16 @@ class ChefsController < ApplicationController
 	end
 
 	def require_same_user
-		if current_chef != @chef 
+		if current_chef != @chef and !current_chef.admin?
 			flash[:danger] = "Puoi solo modificare od eliminare il proprio account"
 			redirect_to chefs_path
+		end
+	end
+
+	def require_admin
+		if logged_in? && !current_chef.admin?
+			flash[:danger] ="Solo l'amministratore può complettare la richiesta"
+			redirect_to root_path
 		end
 	end
 
