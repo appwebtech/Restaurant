@@ -11,13 +11,18 @@
           <li><small><%= pluralize(ing.recipes.count, "ricette") if ing.recipes %></small></li>
           <% if logged_in? && current_chef.admin? %>
           <!--Link do delete chefs-->
-          <li><%= link_to "Modifica ingredienti", ingredient_path(ing) %></li>
+          <li><%= link_to "Modifica ingredienti", edit_ingredient_path(ing) %></li>
           <% end %>
 				</div>
 			</div>
 		</ul>
 
 	<% end %>
-	<%= will_paginate %>
-	
-</div>
+
+  <div class="col-md-4 col-md-offset-4 rangi-kijani">
+  [ <%= link_to "Abandona e ritorna nella lista di ricette", recipes_path %> ]
+  </div>
+    <div align="center">
+    	<%= will_paginate %>
+    	
+    </div>
