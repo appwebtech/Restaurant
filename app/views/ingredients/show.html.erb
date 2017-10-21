@@ -1,0 +1,23 @@
+<%= render 'shared/page_title', title: "Il profilo di #{@ingredient.name}" %>
+
+
+<% if @ingredient.recipes.count != 0 %>
+
+
+	<h4 align="center">Ricette contenente <%= @ingredient.name %></h4>
+
+	<div align="center">
+		<%= will_paginate @ingredient_recipes %>
+	</div>
+
+	<%= render 'recipes/recipe', ukambani: @ingredient_recipes %>
+
+	<div align="center">
+		<%= will_paginate @ingredient_recipes %>
+	</div>
+
+<% else %>
+
+ <H4 align="center">Non ci sono ricette ancora</H4>
+
+<% end %>
