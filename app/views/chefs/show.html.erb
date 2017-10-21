@@ -5,18 +5,25 @@
 		<%= gravatar_for @chef, size: 150 %>
 	</div>
 </div>
+<% if @chef.recipes.count != 0 %>
 
-<!--Grabbing all the recipes associated to each user-->
-<!--I'll create a partial (_recipe) and loop through the users to parse the content they created. Capeesh? Sawasawa!-->
+	<!--Grabbing all the recipes associated to each user-->
+	<!--I'll create a partial (_recipe) and loop through the users to parse the content they created. Capeesh? Sawasawa!-->
 
-<h4 align="center"><%= @chef.chefname %>'s recipes</h4>
+	<h4 align="center"><%= @chef.chefname %>'s recipes</h4>
 
-<div align="center">
-	<%= will_paginate @chef_ricette %>
-</div>
+	<div align="center">
+		<%= will_paginate @chef_ricette %>
+	</div>
 
-<%= render 'recipes/recipe', ukambani: @chef_ricette %>
+	<%= render 'recipes/recipe', ukambani: @chef_ricette %>
 
-<div align="center">
-	<%= will_paginate @chef_ricette %>
-</div>
+	<div align="center">
+		<%= will_paginate @chef_ricette %>
+	</div>
+
+<% else %>
+
+ <H4 align="center">Non ci sono ricette ancora</H4>
+
+<% end %>
