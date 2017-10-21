@@ -21,6 +21,22 @@
 						<%= josembi.text_area :description, rows: 10, class: "form-control", placeholder: "Inserire ingredienti" %>
 					</div>
 			</div>
+
+		<!--Display ingredient ID's in recipes (Instantiates in recipe_params function under the method ingredient_ids: [])-->
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8">
+            <%= josembi.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |keja| %>
+              <% keja.label(class: "checkbox-inline input_checkbox") {keja.check_box(class: "checkbox") + keja.text} %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+		<!--End of displaying ingredient ID's in recipes-->
+			
+
 			<div class="form-group">
 				<div class="col-md-offset-2 col-md-10">
 					<%= josembi.submit(@recipe.new_record? ? "Creare Ricetta" : "Modificare Ricetta", class: "btn btn-primary btn-lg btn-xlarge") %>

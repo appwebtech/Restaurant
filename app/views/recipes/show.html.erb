@@ -6,6 +6,12 @@
 	<hr />
 	<%= simple_format(@recipe.description) %> 
 	<hr> 
+	<!--Show ingredients on show page -->
+	<% if @recipe.ingredients.any? %>
+		<p>Ingredienti: <%= render @recipe.ingredients %></p>
+	<% end %>
+	<!--Finish showing ingredients on show page -->
+
 	<div class="pull-right">
 		<p class="center"><em>Preparato da: </em></p>		
 		<p class="center"> <%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef)%> </p>
