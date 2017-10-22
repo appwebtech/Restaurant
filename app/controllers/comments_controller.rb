@@ -6,21 +6,15 @@ class CommentsController < ApplicationController
 		@comment = @recipe.comments.build(comment_params)
 		@comment.chef = current_chef
 		if @comment.save
-			flash[:success] = "Commento inserita correttamente"
-			redirect_to recipe_path(@recipe)
+			ActionCable.server.broadcast "comments", render(partial: 'comments/comment', object: @comment)
+		#	flash[:success] = "Commento inserita correttamente"
+		#	redirect_to recipe_path(@recipe)
 		else
 			flash[:danger] = "Non è stata possibile ad inserire il commento"
 			redirect_to :back
 		end
 	end
 
-	def edit
-		
-	end
-
-	def update
-		
-	end
 
 	private
 
