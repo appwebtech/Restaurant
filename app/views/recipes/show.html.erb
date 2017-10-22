@@ -28,6 +28,39 @@
 	</div>
 </div>
 </div>
+<!--Enable comments creation on the UI-->
+	<% if logged_in? %>
+
+	<div class ="row">
+		<div class="col-md-8 col-md-offset-2">
+		<h3>Commenti</h3>
+		<hr />
+			<%= form_for([@recipe, @comment], :html => {class: "form-horizontal", role: "form"}) do |josembi| %>
+
+				<div class="form-group">
+					<div class="control-label col-md-2">
+						<%= josembi.label :description, "Commento" %>
+						
+					</div>
+						<div class="col-md-8">
+							<%= josembi.text_area :description, rows: 8, class: "form-control", placeholder: "Inserire commento" %>
+						</div>
+				</div>
+				
+				<div class="form-group">
+					<div class="col-md-offset-2 col-md-10">
+						<%= josembi.submit "Pubblicare", class: "btn btn-primary btn-l btn-large" %> 
+					</div>
+					
+				</div>
+			<% end %>	
+			<hr />
+		</div>
+	</div>
+
+<% end %>
+
+<!--Finish comments creation on the UI-->
 
 <% if @recipe.comments != 0 %>
 	<div class="row">
