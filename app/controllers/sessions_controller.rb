@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
 		chef = Chef.find_by(email: params[:session][:email].downcase) # No instance variable as it wont be used in views
 		if chef && chef.authenticate(params[:session][:password]) # If chef exists & it authenticates
 			session[:chef_id] = chef.id
+			cookies.signed[:chef_id] = chef.id
 			flash[:success] = "Login eseguita con successo"
 			redirect_to chef
 			else

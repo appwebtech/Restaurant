@@ -13,6 +13,7 @@ module Restaurant
     # -- all .rb files in that directory are automatically loaded.
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.action_cable.mount_path = '/cable'
 
   end
 end
