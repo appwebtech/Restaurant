@@ -6,6 +6,6 @@ App.comments = App.cable.subscriptions.create "CommentsChannel",
 
 
   received: (data) ->
-  $("#messages").prepend(data)
+  	$("#messages").prepend(data)
 
 
