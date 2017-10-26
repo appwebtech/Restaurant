@@ -3,10 +3,13 @@
 <div class="row chat-container">
 	<div class="col-md-8 center-block">
 		<div class="messages" id="messages">
-			
+			<%= render @messages %>
 		</div>
 	</div>
 	<div class="message-container">
-		
+		<%= form_for(@message, :html => {class: "form-horizontal", role: "form"}) do |jubilee_nasa| %>
+  		<%= jubilee_nasa.text_area :content, class: "form-control", placeholder: "Inserire messaggio" %>
+  		<%= jubilee_nasa.submit "Invia", class: "btn btn-primary" %>
+		<% end %>
 	</div>
 </div>
