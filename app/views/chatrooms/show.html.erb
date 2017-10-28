@@ -1,15 +1,22 @@
 <%= render 'shared/page_title', title: "ChefChat" %>
 
+
+
 <div class="row chat-container">
-	<div class="col-md-8 center-block">
+	<div class="col-md-8 center-block ">
 		<div class="messages" id="messages">
 			<%= render @messages %>
 		</div>
-	</div>
-	<div class="message-container">
-		<%= form_for(@message, :html => {class: "form-horizontal", role: "form"}) do |jubilee_nasa| %>
-  		<%= jubilee_nasa.text_area :content, class: "form-control", placeholder: "Inserire messaggio" %>
-  		<%= jubilee_nasa.submit "Invia", class: "btn btn-primary" %>
-		<% end %>
+		<hr />
+		<div class="message-container">
+			<%= form_for(@message, remote: true, :html => {class: "form-horizontal", role: "form"}) do |jubilee_nasa| %>
+	  		<%= jubilee_nasa.text_area :content, class: "form-control", data: { behavior: "room_speaker" }, placeholder: "Inserire messaggio" %>
+	  		<%= jubilee_nasa.submit "Invia", class: "btn btn-primary", data: { send: "message"} %>
+
+	  		<!--Included coz Authenticity Token is been sent with AJAX-->
+	  		<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+			<% end %>
+			
+		</div>
 	</div>
 </div>
