@@ -7,8 +7,10 @@ class MessagesController < ApplicationController
     if @message.save
       ActionCable.server.broadcast 'chatroom_channel', message: render_message(@message),
                                                         chef: @message.chef.chefname
+
     else
-      render 'chatrooms/show'
+      flash[:danger] = "Non è stata possibile ad inserire il commento"
+      redirect_to :back    
     end
   end
   

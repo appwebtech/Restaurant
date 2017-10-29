@@ -28,6 +28,23 @@
 	</div>
 </div>
 </div>
+
+<!--Start of Likes-->
+		<div class="row liking">
+  <div class="row col-md-8 col-md-offset-2">
+    <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
+      <i class="glyphicon glyphicon-thumbs-up btn-lg"></i> 
+    <% end %>  <%= @recipe.thumbs_up_total %> ||
+    <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
+      <i class="glyphicon glyphicon-thumbs-down btn-lg"></i> 
+    <% end %> <%= @recipe.thumbs_down_total %>
+  </div>
+</div>
+
+<br />
+
+<!--End of Likes-->
+
 <!--Enable comments creation on the UI-->
 	<% if logged_in? %>
 
@@ -46,7 +63,8 @@
 							<%= josembi.text_area :description, rows: 8, class: "form-control", placeholder: "Inserire commento" %>
 						</div>
 				</div>
-				
+
+
 				<div class="form-group">
 					<div class="col-md-offset-2 col-md-10">
 						<%= josembi.submit "Pubblicare", class: "btn btn-primary btn-l btn-large" %> 

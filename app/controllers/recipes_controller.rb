@@ -1,7 +1,11 @@
 class RecipesController < ApplicationController
-	before_action :mashakura, only: [:show, :edit, :update, :destroy]
-	before_action :require_user, except: [:index, :show]
+	before_action :mashakura, only: [:show, :edit, :update, :destroy, :like]
+	before_action :require_user, except: [:index, :show, :like]
 	before_action :require_same_user, only: [:edit, :update, :destroy]
+	before_action :require_user_like, only: [:like]
+
+	
+
 	def index
 		@recipes = Recipe.paginate(page: params[:page], per_page: 5)
 	end
@@ -45,6 +49,17 @@ class RecipesController < ApplicationController
 		redirect_to recipes_path
 	end
 
+	def like
+		  like = Like.create(like: params[:like], chef: current_chef, recipe: @recipe)
+	  if like.valid?
+	    flash[:success] = "L'operazione completata con successo"
+	    redirect_to :back
+	  else
+	    flash[:danger] = "Questa operazione va fatta una volta solo"
+	    redirect_to :back
+	  end
+	end
+
 	private
 
 	def mashakura
@@ -62,5 +77,12 @@ class RecipesController < ApplicationController
 			redirect_to recipes_path 
 		end
 	end
+
+	def require_user_like
+  if !logged_in?
+    flash[:danger] = "Devi accedere o registrarsi per complettare questa operazione"
+    redirect_to :back
+  end
+end
 
 end
