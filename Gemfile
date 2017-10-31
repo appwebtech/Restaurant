@@ -22,6 +22,11 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'bootstrap-will_paginate', '~> 1.0'
 
+gem 'carrierwave', '~> 1.2', '>= 1.2.1'
+gem 'mini_magick', '~> 4.8'
+gem 'fog', '~> 1.42'
+gem 'nokogiri', '~> 1.8', '>= 1.8.1'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
