@@ -2,7 +2,7 @@
 
 <div class ="row">
 	<div class="col-md-12">
-		<%= form_for(@recipe, :html => {class: "form-horizontal", role: "form"}) do |josembi| %>
+		<%= form_for(@recipe, :html => {class: "form-horizontal", multipart: true, role: "form"}) do |josembi| %>
 			<div class="form-group">
 				<div class="control-label col-md-2">
 					<%= josembi.label :name%>
@@ -33,6 +33,20 @@
           </div>
         </div>
       </div>
+      <hr />
+
+      <!--File Upload Start-->
+    <div class="form-group">
+		  <div class="control-label col-md-2">
+		    <%= josembi.label :image, "Caricare l'immagine" %>
+		  </div>
+		  <div class="col-md-8">
+		    <%= josembi.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+		  </div>
+		</div>
+
+      <!--File Upload End-->
+      <hr />
 
 		<!--End of displaying ingredient ID's in recipes-->
 			

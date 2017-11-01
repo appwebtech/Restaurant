@@ -28,6 +28,7 @@ gem 'fog', '~> 1.42'
 gem 'nokogiri', '~> 1.8', '>= 1.8.1'
 
 
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -40,6 +41,7 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'image_magick', '~> 0.1.9'
 end
 
 group :production do 

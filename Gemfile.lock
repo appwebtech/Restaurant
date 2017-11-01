@@ -230,6 +230,7 @@ GEM
       domain_name (~> 0.5)
     i18n (0.9.0)
       concurrent-ruby (~> 1.0)
+    image_magick (0.1.9)
     inflecto (0.0.2)
     ipaddress (0.8.3)
     jbuilder (2.7.0)
@@ -370,6 +371,7 @@ DEPENDENCIES
   carrierwave (~> 1.2, >= 1.2.1)
   coffee-rails (~> 4.2)
   fog (~> 1.42)
+  image_magick (~> 0.1.9)
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
