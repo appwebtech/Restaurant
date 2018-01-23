@@ -26,6 +26,7 @@ gem 'carrierwave', '~> 1.2', '>= 1.2.1'
 gem 'mini_magick'
 gem 'fog', '~> 1.42'
 gem 'nokogiri', '~> 1.8', '>= 1.8.1'
+gem 'font-awesome-sass', '~> 4.7'
 
 
 
