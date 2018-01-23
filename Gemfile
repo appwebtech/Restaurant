@@ -27,7 +27,7 @@ gem 'mini_magick'
 gem 'fog', '~> 1.42'
 gem 'nokogiri', '~> 1.8', '>= 1.8.1'
 gem 'font-awesome-sass', '~> 4.7'
-
+gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 
 
 group :development, :test do
