@@ -25,7 +25,7 @@ gem 'bootstrap-will_paginate', '~> 1.0'
 gem 'carrierwave', '~> 1.2', '>= 1.2.1'
 gem 'mini_magick'
 gem 'fog', '~> 1.42'
-gem 'nokogiri', '~> 1.8', '>= 1.8.1'
+gem 'nokogiri', '~> 1.11'
 gem 'font-awesome-sass', '~> 4.7'
 
 
