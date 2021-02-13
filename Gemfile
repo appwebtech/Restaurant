@@ -22,7 +22,7 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'bootstrap-will_paginate', '~> 1.0'
 
-gem 'carrierwave', '~> 1.2', '>= 1.2.1'
+gem 'carrierwave', '~> 1.3'
 gem 'mini_magick'
 gem 'fog', '~> 1.42'
 gem 'nokogiri', '~> 1.11'
