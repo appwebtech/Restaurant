@@ -258,7 +258,6 @@ GEM
     mime-types-data (3.2020.1104)
     mini_magick (4.9.4)
     mini_mime (0.1.4)
-
     mini_portile2 (2.8.0)
     minitest (5.14.3)
     multi_json (1.12.2)
@@ -266,14 +265,12 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
-
       racc (~> 1.4)
     pg (0.21.0)
     puma (4.3.12)
       nio4r (~> 2.0)
-
     racc (1.6.1)
-    rack (2.2.3)
+    rack (2.2.5)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.6)
