@@ -63,7 +63,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.8)
+    concurrent-ruby (1.1.10)
     crass (1.0.6)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
@@ -227,8 +227,8 @@ GEM
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
     formatador (0.2.5)
-    globalid (0.4.1)
-      activesupport (>= 4.2.0)
+    globalid (1.0.1)
+      activesupport (>= 5.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (0.9.5)
@@ -258,20 +258,17 @@ GEM
     mime-types-data (3.2020.1104)
     mini_magick (4.9.4)
     mini_mime (0.1.4)
-
     mini_portile2 (2.8.0)
-    minitest (5.14.3)
+    minitest (5.17.0)
     multi_json (1.12.2)
     netrc (0.11.0)
     nio4r (2.5.8)
     nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
-
       racc (~> 1.4)
     pg (0.21.0)
     puma (4.3.12)
       nio4r (~> 2.0)
-
     racc (1.6.1)
     rack (2.2.3)
     rack-test (0.6.3)
